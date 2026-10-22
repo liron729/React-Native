@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import ListScreen from './screen/ListScreen';
+import ListScreen from './screen/challengescreen';
 
 export default function App() {
   return (

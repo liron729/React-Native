@@ -15,6 +15,7 @@ const students = [
       "Coding",
       "Swimming",
     ],
+    thingsTheyDontLike: ["Spicy food", "Loud noises", "Waiting in long lines"],
   },
   {
     firstName: "Liron",
@@ -23,6 +24,7 @@ const students = [
     city: "Fushe Kosova",
     phone: "+383 43 822 778",
     hobbies: ["Cars", "Computers", "Automotive", "Coding", "Gaming"],
+    thingsTheyDontLike: ["Traffic", "motorcycles", "Waiting in long lines"],
   },
   {
     firstName: "Melina",
@@ -31,8 +33,12 @@ const students = [
     city: "Prishtina",
     phone: "+383 43 222 333",
     hobbies: ["Photography", "Music", "Dancing", "Hiking"],
+    thingsTheyDontLike: ["Rudeness", "Negativity", "Being late"],
   },
 ];
+
+
+
 
 const ListScreen = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -83,9 +89,26 @@ const ListScreen = () => {
 
         <Text style={styles.label}>Phone:</Text>
         <Text style={styles.value}>{selectedStudent.phone}</Text>
+
+      
       </View>
 
+
+      <Text style={styles.thingsTheyDontLikeTitle}>Things They Don't Like:</Text>
+      <FlatList
+        data={selectedStudent.thingsTheyDontLike}
+        keyExtractor={(item, index) => `${item}-${index}`}
+        renderItem={({ item }) => (
+          <View style={styles.hobbyItem}>
+            <Text style={styles.hobbyText}>{item}</Text>
+          </View>
+        )}
+      />
+
       <Text style={styles.hobbiesTitle}>Hobbies</Text>
+    
+
+ 
 
       <FlatList
         data={selectedStudent.hobbies}
@@ -159,6 +182,12 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   hobbiesTitle: {
+    fontSize: 22,
+    fontWeight: "700",
+    color: "#1f2937",
+    marginBottom: 10,
+  },
+  thingsTheyDontLikeTitle: {
     fontSize: 22,
     fontWeight: "700",
     color: "#1f2937",

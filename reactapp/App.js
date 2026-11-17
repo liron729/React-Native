@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import ListScreen from './screen/StudentScreen';
+import PostScreen from './screen/PostScreen';
 
 export default function App() {
   return (
-    <ListScreen/>
+    <PostScreen/>
   );
 }
 
